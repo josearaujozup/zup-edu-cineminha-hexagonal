@@ -1,14 +1,15 @@
 package br.com.zup.edu.cineminha.controller.input;
 
+import br.com.zup.edu.cineminha.domain.filme.DadosNovoFilme;
 import br.com.zup.edu.cineminha.model.Classificacao;
-import br.com.zup.edu.cineminha.model.Filme;
+import br.com.zup.edu.cineminha.domain.filme.Filme;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import java.time.Duration;
 
-public class NovoFilmeRequest {
+public class NovoFilmeRequest implements DadosNovoFilme {
 
     @NotBlank
     private String nome;
@@ -32,6 +33,7 @@ public class NovoFilmeRequest {
         return classificacao;
     }
 
+    @Override
     public Filme toModel() {
 
         return new Filme(nome, Duration.ofMinutes(duracaoEmMinutos), classificacao);

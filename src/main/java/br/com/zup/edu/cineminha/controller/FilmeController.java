@@ -1,7 +1,8 @@
 package br.com.zup.edu.cineminha.controller;
 
 import br.com.zup.edu.cineminha.controller.input.NovoFilmeRequest;
-import br.com.zup.edu.cineminha.repository.FilmeRepository;
+import br.com.zup.edu.cineminha.domain.filme.CadastraNovoFilme;
+import br.com.zup.edu.cineminha.domain.filme.Filme;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,13 +18,13 @@ import javax.validation.Valid;
 public class FilmeController {
 
     @Autowired
-    private FilmeRepository repository;
+    private CadastraNovoFilme service;
 
     @PostMapping
     public ResponseEntity<?> cadastra(@RequestBody @Valid NovoFilmeRequest request,
                                       UriComponentsBuilder uriBuilder) {
 
-        var filme = repository.save(request.toModel());
+        Filme filme = service.salva(request);
 
         var location = uriBuilder.path("/api/filmes/{id}")
                 .buildAndExpand(filme.getId())
