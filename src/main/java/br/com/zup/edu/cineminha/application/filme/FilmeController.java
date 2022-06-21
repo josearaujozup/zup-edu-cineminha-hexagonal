@@ -1,6 +1,5 @@
-package br.com.zup.edu.cineminha.controller;
+package br.com.zup.edu.cineminha.application.filme;
 
-import br.com.zup.edu.cineminha.controller.input.NovoFilmeRequest;
 import br.com.zup.edu.cineminha.domain.filme.CadastraNovoFilme;
 import br.com.zup.edu.cineminha.domain.filme.Filme;
 import org.springframework.beans.factory.annotation.Autowired;

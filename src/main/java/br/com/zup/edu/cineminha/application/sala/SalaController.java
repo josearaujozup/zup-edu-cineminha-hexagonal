@@ -1,4 +1,4 @@
-package br.com.zup.edu.cineminha.application;
+package br.com.zup.edu.cineminha.application.sala;
 
 import br.com.zup.edu.cineminha.domain.sala.CadastraNovaSala;
 import org.springframework.beans.factory.annotation.Autowired;

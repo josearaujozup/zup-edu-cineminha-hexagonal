@@ -1,9 +1,8 @@
-package br.com.zup.edu.cineminha.controller;
+package br.com.zup.edu.cineminha.application.sessao;
 
-import br.com.zup.edu.cineminha.controller.input.NovaSessaoRequest;
 import br.com.zup.edu.cineminha.adapters.persistence.filme.FilmeRepository;
 import br.com.zup.edu.cineminha.adapters.persistence.sala.SalaRepository;
-import br.com.zup.edu.cineminha.repository.SessaoRepository;
+import br.com.zup.edu.cineminha.adapters.persistence.sessao.SessaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

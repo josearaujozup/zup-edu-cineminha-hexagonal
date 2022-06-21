@@ -1,6 +1,6 @@
-package br.com.zup.edu.cineminha.controller.input;
+package br.com.zup.edu.cineminha.application.sessao;
 
-import br.com.zup.edu.cineminha.model.Sessao;
+import br.com.zup.edu.cineminha.domain.sessao.Sessao;
 import br.com.zup.edu.cineminha.adapters.persistence.filme.FilmeRepository;
 import br.com.zup.edu.cineminha.adapters.persistence.sala.SalaRepository;
 

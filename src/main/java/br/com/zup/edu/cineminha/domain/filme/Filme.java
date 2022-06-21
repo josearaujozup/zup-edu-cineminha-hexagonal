@@ -1,7 +1,5 @@
 package br.com.zup.edu.cineminha.domain.filme;
 
-import br.com.zup.edu.cineminha.model.Classificacao;
-
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
