@@ -3,6 +3,8 @@ package br.com.zup.edu.cineminha.application.sessao;
 import br.com.zup.edu.cineminha.adapters.persistence.filme.FilmeRepository;
 import br.com.zup.edu.cineminha.adapters.persistence.sala.SalaRepository;
 import br.com.zup.edu.cineminha.adapters.persistence.sessao.SessaoRepository;
+import br.com.zup.edu.cineminha.domain.sessao.CadastraNovaSessao;
+import br.com.zup.edu.cineminha.domain.sessao.Sessao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +20,7 @@ import javax.validation.Valid;
 public class SessaoController {
 
     @Autowired
-    private SessaoRepository repository;
+    private CadastraNovaSessao service;
 
     @Autowired
     private SalaRepository salaRepository;
@@ -30,7 +32,9 @@ public class SessaoController {
     public ResponseEntity<?> cadastra(@RequestBody @Valid NovaSessaoRequest request,
                                       UriComponentsBuilder uriBuilder) {
 
-        var sessao = repository.save(request.toModel(salaRepository, filmeRepository));
+//        var sessao = repository.save(request.toModel(salaRepository, filmeRepository));
+
+        Sessao sessao = service.salva(request);
 
         var location = uriBuilder.path("/api/sessoes/{id}")
                 .buildAndExpand(sessao.getId())
